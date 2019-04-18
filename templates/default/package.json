@@ -1,0 +1,32 @@
+{
+  "name": "nunit-report-template",
+  "version": "1.0.0",
+  "description": "HTML template for NUnit report",
+  "main": "./js/app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "NUnit"
+  ],
+  "author": "ivan.mihaylovskyy",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.7.8",
+    "angular-animate": "1.4.8",
+    "angular-backtop": "0.0.1",
+    "angular-route": "1.4.8",
+    "angular-tree-control": "0.2.21",
+    "angular-ui-bootstrap": "1.0.3",
+    "bootstrap": "3.3.6"
+  },
+  "devDependencies": {
+    "browserify": "13.0.0",
+    "gulp": "3.9.0",
+    "gulp-inject": "3.0.0",
+    "gulp-uglify": "1.5.1",
+    "gulp-util": "3.0.7",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  }
+}

@@ -1,0 +1,145 @@
+treecontrol {
+    /* prevent user selection */
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.container-fluid {
+	padding-top: 1em;
+}
+
+.nav a, a.list-group-item {
+	cursor: pointer;
+}
+
+.nav-filter li {
+	border-left: 1px solid #ccc;
+}
+
+.nav-filter li:first-child {
+  border: none;
+}
+
+.nav-pills li.active a {
+	color: #777;
+	background-color: #eee;
+  	border-radius: 0;
+}
+
+.nav-pills li.active a:hover {
+	background-color: #4CAAFA;
+}
+
+.nav-pills li.active .badge {
+	color: #008AFF;
+}
+
+.success {
+	color: #3c763d;
+	background-color: #dff0d8;
+}
+
+.failed {
+	color: #a94442;
+	background-color: #f2dede;
+}
+
+.inconclusive {
+	color: #31708f;
+	background-color: #d9edf7;
+}
+
+.skipped {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+}
+
+.list-group-item {
+	word-wrap: break-word;
+}
+
+.form-control, .nav.nav-pills.nav-justified {
+	margin-bottom: 1em;
+}
+
+.nav.nav-pills.nav-justified {
+	border: 1px solid #ccc;
+	border-radius: 5px;	
+}
+
+pre.truncated {
+	max-height: 30em;
+}
+
+.carousel img {
+	width: 100%;
+}
+
+.carousel-indicators li {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators li.active {
+	border-color: rgba(0, 0, 0, 0.5);
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.page-header {
+	margin-top: 0;
+}
+
+.test-case-name {
+	font-size: 1.5em;
+	margin-top: 0;
+}
+
+treecontrol.tree-light li.tree-expanded i.tree-branch-head,
+treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+	padding: 0;
+	background: none;
+}
+
+treeitem ul.list-group {
+	margin-bottom: 0;
+	box-shadow: none;
+}
+
+treeitem li.list-group-item {
+	border-right: none;
+	border-left: none;
+}
+
+treeitem li.list-group-item:first-child {
+	border-top: none;
+}
+
+treeitem li.list-group-item:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.selected {
+	font-weight: bold;
+	
+}
+
+span.duration {
+	width: 5em;
+    padding: 0 1em;
+    
+    text-align: center;
+    
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+.excludeCheckbox {
+	margin: 7px 0px 0px 0px;
+}

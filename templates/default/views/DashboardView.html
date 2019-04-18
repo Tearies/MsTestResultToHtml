@@ -1,0 +1,92 @@
+<div class="left-menu col-md-4">
+    <ul class="nav nav-pills nav-justified nav-filter">
+        <li ng-class="{active: isResultTypeAny()}">
+            <a ng-click="setAnyResultType()">
+                总数 <span class="badge">{{summary.Total}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Passed')}">
+            <a ng-click="setActiveResultType('Passed')">
+                成功 <span class="badge success">{{summary.Passed}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Failed')}">
+            <a ng-click="setActiveResultType('Failed')">
+                失败 <span class="badge failed">{{summary.Failed}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Inconclusive')}">
+            <a ng-click="setActiveResultType('Inconclusive')">
+                无效 <span class="badge inconclusive">{{summary.Inconclusive}}</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeActive('Skipped')}">
+            <a ng-click="setActiveResultType('Skipped')">
+                跳过 <span class="badge skipped">{{summary.NotExecuted}}</span>
+            </a>
+        </li>
+    </ul>
+      <div class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input 
+                 type="search" 
+                 class="form-control" 
+                 ng-model="query" 
+                 ng-change="saveQueryState()"
+                 uib-typeahead="name as tc.TestName for tc in testCases | filter:$viewValue | limitTo:8" 
+                 typeahead-on-select="setQueryFilterValue($item.TestName)" 
+                 placeholder="Test Case Filter" 
+              />  
+            </div>
+            <div class="col-sm-2 excludeCheckbox">
+               <label for="excludefilter"><input type="checkbox" id="excludefilter" ng-model="excludeFilter" ng-change="saveExcludeFilterState()" class="checkbox-inline"><code>排除</code></label>
+            </div>
+        </div>
+      </div>
+
+    <ul class="list-group">
+        <a 
+            class="list-group-item" 
+            ng-class="{
+              'list-group-item-success': tc.Result == 'Passed',
+              'list-group-item-danger': tc.Result == 'Failed',
+              'list-group-item-warning': tc.Result == 'Skipped',
+              'list-group-item-info': tc.Result == 'Inconclusive',
+              'selected': tc.TestName === currentTestCase.TestName
+            }" 
+            ng-click="openTestCase(tc)" 
+            ng-repeat="tc in testCases | filter : testCaseResultFilter | filter: testCaseTextFilter"
+        >
+            <small>{{GetDisplayName(tc)}}</small>
+        </a>
+    </ul>
+</div>
+
+<div class="col-md-8">
+    <div class="page-header">
+        <h3 class="test-case-name">
+        <span ng-class="{
+            'text-success': currentTestCase.Result == 'Passed',
+            'text-danger': currentTestCase.Result == 'Failed',
+            'text-warning': currentTestCase.Result == 'Skipped'
+        }">[{{GetTestCaseResult(currentTestCase)}}] {{currentTestCase.name}}</span>
+        <span class="label pull-right" ng-class="{
+            'label-success': currentTestCase.Result == 'Passed',
+            'label-danger': currentTestCase.Result == 'Failed',
+            'label-warning': currentTestCase.Result == 'Skipped'
+        }">{{currentTestCase.Duration}}秒</span>
+        <p><small>{{currentTestCase.ClassName}}</small></p>
+        </h3>
+    </div>
+    <div ng-show="!!currentTestCase.getMessage()">
+        <h4>消息</h4>
+        <pre class="truncated">{{currentTestCase.getMessage()}}</pre>
+        <hr/>
+    </div>
+    <div ng-show="!!currentTestCase.getStackTrace()">
+        <h4>堆栈</h4>
+        <pre class="truncated">{{currentTestCase.getStackTrace()}}</pre>
+        <hr/>
+    </div>
+</div>
