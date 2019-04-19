@@ -12,13 +12,14 @@
   "author": "ivan.mihaylovskyy",
   "license": "ISC",
   "dependencies": {
-    "angular": "1.7.8",
+    "angular": "1.4.8",
     "angular-animate": "1.4.8",
     "angular-backtop": "0.0.1",
     "angular-route": "1.4.8",
     "angular-tree-control": "0.2.21",
     "angular-ui-bootstrap": "1.0.3",
-    "bootstrap": "3.3.6"
+    "bootstrap": "3.3.6",
+    "grunt": "^0.4.5"
   },
   "devDependencies": {
     "browserify": "13.0.0",
