@@ -330,3 +330,4 @@ ASALocalRun/
 .mfractor/
 /templates/default/package-lock.json
 /templates/default/dist
+/MsTestResultToHtml/templates
