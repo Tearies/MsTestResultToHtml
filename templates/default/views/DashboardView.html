@@ -1,4 +1,4 @@
-<div class="left-menu col-md-4">
+<div class="left-menu col-md-6">
     <ul class="nav nav-pills nav-justified nav-filter">
         <li ng-class="{active: isResultTypeAny()}">
             <a ng-click="setAnyResultType()">
@@ -44,8 +44,8 @@
             </div>
         </div>
       </div>
-
-    <ul class="list-group">
+<div class="CaseGroup col-md-6">
+    
         <a 
             class="list-group-item" 
             ng-class="{
@@ -60,10 +60,12 @@
         >
             <small>{{GetDisplayName(tc)}}</small>
         </a>
-    </ul>
+   
+</div>
+   
 </div>
 
-<div class="col-md-8">
+<div class="col-md-6">
     <div class="page-header">
         <h3 class="test-case-name">
         <span ng-class="{
