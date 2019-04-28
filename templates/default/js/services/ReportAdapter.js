@@ -26,6 +26,7 @@ ReportAdapter.prototype.summary = function() {
         'StartTime': this.summaryreport['StartTime'] || 0,
         'FinishTime': this.summaryreport['FinishTime'] || 0,
         'TestCategory': this.summaryreport['TestCategory'] || 0,
+        'Duration': this.summaryreport['Duration'] || 0,
     };
 };
 

@@ -123,7 +123,7 @@ namespace MsTestResultToHtml
             else
                 testCategory = doc.Element(XName.Get("TestRun", xmlns)).Attribute("name");
 
-            return new TotalTestsProperties()
+            var prop= new TotalTestsProperties()
             {
                 Total = total.Attribute("total").Value.ToString(),
                 Executed = total.Attribute("executed").Value.ToString(),
@@ -145,6 +145,8 @@ namespace MsTestResultToHtml
                 FinishTime = DateTime.Parse(finishTime.Value.ToString()),
                 TestCategory = testCategory.Value.ToString()
             };
+            prop.Duration = prop.FinishTime.Subtract(prop.StartTime);
+            return prop;
         }
     }
 }

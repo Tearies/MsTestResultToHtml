@@ -22,6 +22,8 @@ namespace MsTestResultToHtml
         public string Pending { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime FinishTime { get; set; }
+        public TimeSpan Duration { get; set; }
+
         public string TestCategory { get; set; }
 
         public override bool Equals(object obj)

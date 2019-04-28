@@ -1,6 +1,11 @@
 <div class="left-menu col-md-6">
     <ul class="nav nav-pills nav-justified nav-filter">
         <li ng-class="{active: isResultTypeAny()}">
+            <a>
+                运行时长 <span class="badge">{{summary.duration}}秒</span>
+            </a>
+        </li>
+        <li ng-class="{active: isResultTypeAny()}">
             <a ng-click="setAnyResultType()">
                 总数 <span class="badge">{{summary.Total}}</span>
             </a>
